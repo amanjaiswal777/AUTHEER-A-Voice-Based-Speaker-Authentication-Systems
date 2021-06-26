@@ -1,13 +1,13 @@
 import pyaudio
 import wave
 
-def record_test():
+def record():
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
     RECORD_SECONDS = 5
-    WAVE_OUTPUT_FILENAME = "test.wav"
+    WAVE_OUTPUT_FILENAME = "train1.wav"
 
     p = pyaudio.PyAudio()
 
@@ -33,3 +33,6 @@ def record_test():
     wf.writeframes(b''.join(frames))
     wf.close()
     return print("done")
+
+if __name__ == '__main__':
+    record()

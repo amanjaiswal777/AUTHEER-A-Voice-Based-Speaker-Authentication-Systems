@@ -1,13 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb  6 13:56:39 2019
+
+@author: Aman Jaiswal
+"""
+
 import pyaudio
 import wave
 
-def record_test():
+def record_train1():
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
     RECORD_SECONDS = 5
-    WAVE_OUTPUT_FILENAME = "test.wav"
+    WAVE_OUTPUT_FILENAME = "train1.wav"
 
     p = pyaudio.PyAudio()
 

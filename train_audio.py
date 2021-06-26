@@ -40,6 +40,3 @@ def record_train():
     wf.writeframes(b''.join(frames))
     wf.close()
     return print("done")
-
-if __name__ == '__main__':
-    record()

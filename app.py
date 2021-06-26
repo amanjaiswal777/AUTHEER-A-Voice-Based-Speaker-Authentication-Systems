@@ -1,7 +1,11 @@
 import os
 import sys
 
-from train_audio import record_train
+from train_audio1 import record_train1
+from train_audio2 import record_train2
+from train_audio3 import record_train3
+from train_audio4 import record_train4
+from train_audio5 import record_train5
 from test_audio import record_test
 from flask import jsonify
 from flask import Flask,render_template,request
@@ -19,10 +23,34 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello_world():
     return render_template('default.html')
 
-@app.route('/trainaudiosave',methods=['GET','POST'])
-def trainaudiosave():
+@app.route('/trainaudiosave1',methods=['GET','POST'])
+def trainaudiosave1():
     print("\n\n\nRunning\n\n\n\n")
-    record_train()
+    record_train1()
+    return "done",200
+
+@app.route('/trainaudiosave2',methods=['GET','POST'])
+def trainaudiosave2():
+    print("\n\n\nRunning\n\n\n\n")
+    record_train2()
+    return "done",200
+
+@app.route('/trainaudiosave3',methods=['GET','POST'])
+def trainaudiosave3():
+    print("\n\n\nRunning\n\n\n\n")
+    record_train3()
+    return "done",200
+
+@app.route('/trainaudiosave4',methods=['GET','POST'])
+def trainaudiosave4():
+    print("\n\n\nRunning\n\n\n\n")
+    record_train4()
+    return "done",200
+
+@app.route('/trainaudiosave5',methods=['GET','POST'])
+def trainaudiosave5():
+    print("\n\n\nRunning\n\n\n\n")
+    record_train5()
     return "done",200
 
 @app.route('/testaudiosave',methods=['GET','POST'])
@@ -35,6 +63,7 @@ def testaudiosave():
 def trainaudio():
     print("\n\n\nRunning\n\n\n\n")
     a = get_id_result()
+    print(a)
     data = {'status' : a}
     print(data)
     # response = app.response_class(
@@ -45,4 +74,5 @@ def trainaudio():
     return jsonify(data)
     
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0',port = 3000);
+    localhost = '127.0.0.1'
+    app.run(host = localhost, port = 3000);

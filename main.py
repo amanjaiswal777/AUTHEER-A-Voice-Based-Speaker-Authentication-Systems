@@ -10,7 +10,7 @@ from wav_reader import get_fft_spectrum
 import constants as c
 
 import speech_recognition as sr
-os.chdir(r"C:\Users\Aman Jaiswal\Desktop\backup2\vgg")
+os.chdir(r"/home/aman/Desktop/AUTHEER/vgg")
 def build_buckets(max_sec, step_sec, frame_step):
     buckets = {}
     frames_per_sec = int(1/frame_step)
@@ -58,7 +58,7 @@ def get_id_result():
     print(distances)
     dist_t=np.array(dist_t)
     k=np.amin(dist_t,axis=0)
-    if(k[0]>.22):
+    if(k[0]>.28):
         #by using cosine distance if value if less than 0.2 then it proceed further otherwise halting the proghram.
         print("unauthorized user................")
         return 0
@@ -75,33 +75,37 @@ def get_id_result():
         print(k1[0])
         AUDIO_FILE_1 = k1[0]
         AUDIO_FILE_2=k2[0]
-        print(k2[0])
+        #print(k2[0])
         #now we are going to match the text using google speech to text api.
         # use the audio file as the audio source                                        
         r = sr.Recognizer()
         a=[]
         print("train")
-        with sr.AudioFile(AUDIO_FILE_2) as source:
+        with sr.AudioFile(AUDIO_FILE_1) as source:
             audio = r.record(source) 
-            a=r.recognize_google(audio)
-            a=list(a.split(" "))
+            z=r.recognize_google(audio)
+            a=list(z.split(" "))
             l1=len(a)
+            print(a)
         b=[]
         s = sr.Recognizer()
         print("test")
         with sr.AudioFile(AUDIO_FILE_2) as source:
             audio = s.record(source) 
-            b=s.recognize_google(audio)
-            b=list(b.split(" "))
+            z=s.recognize_google(audio)
+            b=list(z.split(" "))
             l2=len(b)
+            print(b)
         counter=0
         for i in range(l1):
-            if(a[i]==b[i]):
+            if(a[i] in b):
+                b.remove(a[i])
                 counter+=1
+        print(counter)
         if(l1>=l2):
-            denom=l2
-        else:
             denom=l1
+        else:
+            denom=l2
         if(counter/denom>0.8):
             #if usre is authorized by both speaker validation and text matching
             print("true")
