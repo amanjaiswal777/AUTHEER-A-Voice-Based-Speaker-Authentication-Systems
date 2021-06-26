@@ -1,6 +1,6 @@
 # AUTHEER: A Voice-Based Speaker Authentication Systems
 
-This repository is the implementation of the paper **"AUTHEER: A Voice-Based Speaker Authentication Systems"** published in **"International Journal of Advanced Science and Technology"** (**IJAST**). Official source link to the page could be found here:- 
+This repository is the implementation of the paper "**AUTHEER: A Voice-Based Speaker Authentication Systems**" published in "**International Journal of Advanced Science and Technology**" (**IJAST**). Official source link to the page could be found here:- 
 Link - "http://sersc.org/journals/index.php/IJAST/article/view/31493"
 
 ## Introduction
