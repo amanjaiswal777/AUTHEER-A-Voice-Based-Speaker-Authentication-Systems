@@ -1,5 +1,8 @@
 # AUTHEER: A Voice-Based Speaker Authentication Systems
 
+This repository is the implementation of the paper **"AUTHEER: A Voice-Based Speaker Authentication Systems"** published in **"International Journal of Advanced Science and Technology"** (**IJAST**). Official source link to the page could be found here:- 
+Link - "http://sersc.org/journals/index.php/IJAST/article/view/31493"
+
 ## Introduction
 
 Speaker Authentication systems are voice-based user verification and validation systems. They are used to verify if the user is the person he/she claims to be. At their core lies various Deep Learning based algorithms that decide the complete flow of the system. The process starts by system listening to the sound; the speaker produces while speaking. Then the system needs to make sense of the speech and extract words in a particular language. The model used in the project takes the samples of voice for any user as input. These samples are used for model training; the last sample is taken to check for the authenticity of the user. The
